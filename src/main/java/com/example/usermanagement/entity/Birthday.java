@@ -10,7 +10,7 @@ import java.time.temporal.ChronoUnit;
 public class Birthday {
     @NotBlank
     @Past
-    @DateTimeFormat(pattern = "yyyyMMdd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
     public Birthday(LocalDate birthday) {
