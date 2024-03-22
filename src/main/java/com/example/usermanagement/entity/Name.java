@@ -11,10 +11,9 @@ public class Name {
     @NotBlank
     @Length(min = 1, max = 50)
     private String firstName;
-    private String fullName;
 
     public Name(String lastName, String firstName) {
-        this.fullName = lastName + " " + firstName;
+        this.lastName = lastName;
+        this.firstName = firstName;
     }
-
 }

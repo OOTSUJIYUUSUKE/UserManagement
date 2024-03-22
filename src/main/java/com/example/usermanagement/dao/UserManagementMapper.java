@@ -1,4 +1,4 @@
-package com.example.usermanagement.dto;
+package com.example.usermanagement.dao;
 
 import com.example.usermanagement.entity.User;
 import org.apache.ibatis.annotations.Mapper;

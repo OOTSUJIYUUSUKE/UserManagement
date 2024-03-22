@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class UserManagementController {
@@ -17,7 +18,9 @@ public class UserManagementController {
     }
 
     @GetMapping("/users")
-    public List<User> getAllUsers() {
-        return userManagementService.findAll();
+    public List<UserResponse> getAllUsers() {
+        List<User> userList = userManagementService.findAll();
+        List<UserResponse> userResponse = userList.stream().map(s -> new UserResponse(s)).collect(Collectors.toList());
+        return userResponse;
     }
 }
